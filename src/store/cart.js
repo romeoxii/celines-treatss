@@ -85,6 +85,7 @@ export const useCartStore = defineStore('cart', () => {
         try {
             await supabase.from('carts').delete().eq('id', id);
             userCart.value = userCart.value.filter((i) => i.id !== id);
+            showToast('Item deleted', 'success');
         } catch (err) {
             console.error('Error removing item:', err.message);
         }

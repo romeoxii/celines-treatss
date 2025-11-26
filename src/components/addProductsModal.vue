@@ -116,14 +116,19 @@ const handleUploadSubmit = async () => {
                 </div>
                 <div class="flex flex-col w-full space-y-1">
                     <label class="text-sm text-neutral-600" for="productPrice">Price *</label>
-                    <input
-                        type="number"
-                        id="productPrice"
-                        v-model="productPrice"
-                        placeholder="product price"
-                        required
-                        class="text-sm text-neutral-600 outline-none border-2 border-blue-100 rounded-lg p-2"
-                    />
+                    <div class="relative w-full">
+                        <input
+                            type="number"
+                            id="productPrice"
+                            v-model="productPrice"
+                            placeholder="product price"
+                            required
+                            class="text-sm text-neutral-600 outline-none border-2 border-blue-100 rounded-lg p-2 pl-5 w-full"
+                        />
+                        <span class="absolute left-2 top-[46%] -translate-y-1/2 text-gray-400"
+                            >$</span
+                        >
+                    </div>
                 </div>
                 <div class="flex flex-col w-full space-y-1">
                     <label class="text-sm text-neutral-600" for="category">Category *</label>
@@ -149,3 +154,11 @@ const handleUploadSubmit = async () => {
         </form>
     </div>
 </template>
+
+<style scoped>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>

@@ -64,19 +64,21 @@ const handleUpdateSubmit = async () => {
                     v-if="previewUrl || productById.image_url"
                     :src="previewUrl || productById.image_url"
                     alt="Product Image"
-                    class="h-full w-full object-cover rounded-xl"
+                    class="h-full w-full object-cover rounded-xl opacity-70"
                 />
                 <input
                     type="file"
                     accept="image/png, image/jpeg, image/webp"
-                    class="absolute inset-0 h-full w-full opacity-0 cursor-pointer"
+                    class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
                     @change="handleFileChange"
                 />
             </div>
 
+            <p class="text-neutral-400 text-xs w-full text-center">
+                (click on image to update if needed)
+            </p>
             <!-- Product Inputs -->
             <div class="flex flex-col w-full min-h-10 space-y-4">
-                <p class="text-neutral-400 text-xs">(click on image to update if needed)</p>
                 <div class="flex flex-col w-full space-y-1">
                     <label class="text-sm text-neutral-600" for="productName">Name *</label>
                     <input
@@ -91,14 +93,19 @@ const handleUpdateSubmit = async () => {
 
                 <div class="flex flex-col w-full space-y-1">
                     <label class="text-sm text-neutral-600" for="productPrice">Price *</label>
-                    <input
-                        type="number"
-                        id="productPrice"
-                        v-model="productById.price"
-                        placeholder="product price"
-                        required
-                        class="text-sm text-neutral-600 outline-none border-2 border-blue-100 rounded-lg p-2"
-                    />
+                    <div class="relative w-full">
+                        <input
+                            type="number"
+                            id="productPrice"
+                            v-model="productById.price"
+                            placeholder="product price"
+                            required
+                            class="text-sm text-neutral-600 outline-none border-2 border-blue-100 rounded-lg p-2 pl-5 w-full"
+                        />
+                        <span class="absolute left-2 top-[46%] -translate-y-1/2 text-gray-400"
+                            >$</span
+                        >
+                    </div>
                 </div>
 
                 <div class="flex flex-col w-full space-y-1">
@@ -125,3 +132,11 @@ const handleUpdateSubmit = async () => {
         </form>
     </div>
 </template>
+
+<style scoped>
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>

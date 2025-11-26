@@ -3,7 +3,7 @@
 import { useAdminStore } from '../../store/admin';
 import statusPill from '../../components/statusPill.vue';
 import adminGrids from '../../components/adminGrids.vue';
-import IconLeft from '../../../public/icons/IconLeft.vue';
+
 import loadingScreen from '../../components/loadingScreen.vue';
 import { onMounted } from 'vue';
 
@@ -36,10 +36,8 @@ onMounted(async () => {
                 class="w-full px-3 md:pl-10 py-3 min-h-34 bg-linear-to-br flex items-center justify-between from-blue-500 to-blue-100 rounded-xl text-white shadow"
             >
                 <div>
-                    <h1 class="sm:text-5xl text-3xl">Hi, Celine</h1>
-                    <p class="text-[#4c4c4c] sm:text-sm text-xs">
-                        Welcome back to celine's treats dashboard.
-                    </p>
+                    <h1 class="sm:text-5xl text-3xl">Hi, Admin</h1>
+                    <p class="text-xs">Welcome back to celine's treats dashboard.</p>
                 </div>
                 <div class="h-full">
                     <img src="/Images/Welcome-rafiki.svg" alt="" class="h-full" />
@@ -123,8 +121,23 @@ onMounted(async () => {
                                 <p class="text-center truncate">{{ order.created_at }}</p>
                             </div>
                         </div>
-                        <RouterLink class="flex center w-full gap-1" to="/admin/Orders"
-                            ><IconLeft /><i>View all orders</i>
+                        <RouterLink
+                            class="flex center w-full gap-1 p-1 text-neutral-700 hover:text-black"
+                            to="/admin/Orders"
+                            ><span
+                                ><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill=""
+                                    class="bi bi-arrow-left"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                                    /></svg></span
+                            ><i>view all orders</i>
                         </RouterLink>
                     </div>
                 </div>

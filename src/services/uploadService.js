@@ -12,7 +12,7 @@ export const capitalizeFirstLetter = (str) => {
 
 // Product form reactive variables
 export const productName = ref('');
-export const productPrice = ref(0);
+export const productPrice = ref(null);
 export const category = ref('');
 export const selectedImage = ref(null);
 export const previewUrl = ref('');

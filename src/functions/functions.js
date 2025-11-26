@@ -20,28 +20,32 @@ export const handleResize = () => {
     if (!isMobile.value) sideNav.value = true; // auto expand on sm+
 };
 
+export const editButton = ref(false);
+export const showModal = ref(false);
+export const uploadModal = ref(false);
+export const options = ref(false);
+// confirm delete modal
+export const confirmDelete = ref(false);
+
+export const selectedProductId = ref(null);
+
 export const deleteProduct = ref(false);
+export const editProduct = ref(false);
 
 export const toggleDeleteProduct = () => {
     deleteProduct.value = !deleteProduct.value;
+    editButton.value = false;
 };
-export const uploadModal = ref(false);
 
 export const toggleUploadModal = () => {
     uploadModal.value = !uploadModal.value;
     console.log(uploadModal.value);
 };
 
-export const options = ref(false);
-
 //delete or upload option
 export const showOptions = () => {
     options.value = !options.value;
 };
-// confirm delete modal
-export const confirmDelete = ref(false);
-
-export const selectedProductId = ref(null);
 
 export const showConfirm = (id) => {
     selectedProductId.value = id;
@@ -51,18 +55,15 @@ export const showConfirm = (id) => {
     toggleDeleteProduct();
 };
 
-export const editProduct = ref(false);
 export const toggleEditProduct = () => {
     editProduct.value = !editProduct.value;
+    deleteProduct.value = false;
 };
-
-export const editButton = ref(false);
 
 export const showEditButton = () => {
     editButton.value = !editButton.value;
 };
 
-export const showModal = ref(false);
 export const toggleEditModal = (id) => {
     selectedProductId.value = id;
     showModal.value = !showModal.value;

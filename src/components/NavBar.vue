@@ -110,9 +110,7 @@ onMounted(() => {
                 >
             </ul>
 
-            <RouterLink to="/auth" class="nav text-black hover center text-[1em]" v-else
-                ><i>Login/Signup</i></RouterLink
-            >
+            <RouterLink to="/auth" class="nav" v-else><i>Login/Signup</i></RouterLink>
 
             <button
                 class="hidden md:flex py-2 px-3 rounded-xl text-white bg-[#3b83f6e5] hover:bg-blue-400 hover:text-[#333] hover text-sm"

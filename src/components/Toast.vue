@@ -8,10 +8,10 @@ import { toast_message, toast_type, toast_visible } from '../services/toastServi
         ><div
             v-if="toast_visible"
             :class="[
-                'fixed top-5 left-1/2 z-50 -translate-x-1/2 px-4 py-2 rounded-2xl  transition-all shadow-xl',
+                'fixed top-5 right-10 z-50 -translate-x-1/2 px-4 py-2 rounded-2xl  transition-all shadow-xl text-sm',
                 toast_type === 'success'
-                    ? 'bg-green-200 border border-green-400'
-                    : 'bg-red-200 border border-red-400',
+                    ? 'bg-green-200/95 text-green-600 border border-green-400 rounded-lg'
+                    : 'bg-red-200/40 border border-red-400 text-red-400 rounded-lg',
             ]"
         >
             {{ toast_message }}
@@ -24,7 +24,7 @@ import { toast_message, toast_type, toast_visible } from '../services/toastServi
 .toast-leave-to {
     opacity: 0;
     transform: scale(0.2);
-    transform: translate(-50%, -20px);
+    transform: translateY(-50px);
 }
 
 .toast-enter-active,

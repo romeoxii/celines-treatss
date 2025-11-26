@@ -40,9 +40,9 @@ onMounted(() => {
             class="center lg:h-screen w-full h-[500px] relative text-[#e8e8e8] bg-center bg-cover"
             style="background-image: url('/ImagesWebp/bg-img.webp')"
         >
-            <div class="inset-0 absolute bg-black/30 z-10"></div>
-            <div class="center w-full h-full z-50">
-                <div class="col-center text-center space-y-2">
+            <div class="inset-0 absolute bg-black/60 z-10"></div>
+            <div class="e w-full h-full z-50 relative">
+                <div class="col-center text-center space-y-2 absolute top-80 right-40">
                     <div class="fade-in space-y-2">
                         <h1 class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-medium mb-1">
                             Celine's Treats
