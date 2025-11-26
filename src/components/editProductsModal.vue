@@ -5,6 +5,9 @@ import { updating, updateProduct, getProductById, productById } from '../service
 import { selectedImage, previewUrl, handleFileChange } from '../services/uploadService';
 import { showToast } from '../services/toastServices';
 import { uploadFile } from '../services/uploadService';
+import { useAdminStore } from '../store/admin';
+
+const adminStore = useAdminStore();
 
 // Fetch product on mount
 onMounted(async () => {
@@ -37,6 +40,7 @@ const handleUpdateSubmit = async () => {
         if (updated) {
             showToast('Product updated successfully', 'success');
             toggleEditModal(selectedProductId.value);
+            await adminStore.fetchProducts();
         } else {
             showToast('Update failed', 'failed');
         }

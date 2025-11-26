@@ -24,7 +24,6 @@ const toggle = (order) => {
 
 onMounted(async () => {
     await adminStore.fetchAll();
-    await adminStore.fetchOrders();
 });
 </script>
 
