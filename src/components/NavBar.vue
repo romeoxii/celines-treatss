@@ -79,7 +79,7 @@ onMounted(async () => {
                     />
                 </svg>
                 <div
-                    class="hidden sm:flex flex-col items-center min-h-10 w-38 absolute -bottom-39 rounded-lg z-10 right-2 bg-white shadow-sm border-[0.1px] border-blue-100 hover"
+                    class="hidden sm:flex flex-col items-center min-h-10 w-38 absolute -bottom-38 rounded-lg z-10 right-2 bg-white shadow-sm border-[0.1px] border-blue-100 hover"
                     v-if="dropDown"
                 >
                     <li

@@ -32,8 +32,8 @@ onMounted(() => {
             style="background-image: url('/ImagesWebp/bg-img.webp')"
         >
             <div class="inset-0 absolute bg-black/60 z-10"></div>
-            <div class="e w-full h-full z-50 center lg:relative">
-                <div class="col-center text-center space-y-2 lg:absolute lg:top-80 lg:right-40">
+            <div class="e w-full h-full z-50 center">
+                <div class="col-center text-center space-y-2">
                     <div class="fade-in space-y-2">
                         <h1 class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-medium mb-1">
                             Celine's Treats
