@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, provide, reactive } from 'vue';
 import { supabase } from '@/lib/supabaseClient.js';
-import { switchIcon } from '../../functions/functions';
+import { openClose } from '../../functions/functions';
 
 import { useRouter } from 'vue-router';
 
@@ -17,10 +17,10 @@ const userDetails = reactive({
 const router = useRouter();
 
 const logout = () => {
-    switchIcon();
+    openClose.value = false;
     supabase.auth.signOut();
     user.value = null;
-    router.push({ path: '/auth', query: { form: 'signup' } });
+    router.push({ path: '/auth', query: { form: 'login' } });
 };
 
 onMounted(async () => {
