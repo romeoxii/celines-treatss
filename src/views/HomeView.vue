@@ -1,21 +1,12 @@
 <script setup>
 import { onMounted, computed } from 'vue';
-import { supabase } from '../lib/supabaseClient';
 
 import pastries from '@/data/pastries.json';
-
-// const auth = inject('auth');
-
-// const user = auth.user;
 
 const currentPasteries = computed(() => {
     return pastries['items'] || [];
 });
 
-onMounted(async () => {
-    const { data, error } = await supabase.rpc('is_admin_products');
-    console.log('is admin?', data, 'error', error);
-});
 onMounted(() => {
     const observer = new IntersectionObserver(
         (entries) => {
@@ -35,14 +26,14 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen w-full">
+    <div class="min-h-screen w-full col-center">
         <div
             class="center lg:h-screen w-full h-[500px] relative text-[#e8e8e8] bg-center bg-cover"
             style="background-image: url('/ImagesWebp/bg-img.webp')"
         >
             <div class="inset-0 absolute bg-black/60 z-10"></div>
-            <div class="e w-full h-full z-50 relative">
-                <div class="col-center text-center space-y-2 absolute top-80 right-40">
+            <div class="e w-full h-full z-50 center lg:relative">
+                <div class="col-center text-center space-y-2 lg:absolute lg:top-80 lg:right-40">
                     <div class="fade-in space-y-2">
                         <h1 class="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-medium mb-1">
                             Celine's Treats
@@ -76,44 +67,7 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <section
-            id="About"
-            class="fade-in min-h-[300px] w-full flex flex-col items-center gap-3 p-4 secondary-bg"
-        >
-            <h1 class="text-center text-4xl md:text-5xl lg:text-6xl py-4 fade-in font-sans">
-                About Celine's treats
-            </h1>
-            <div
-                class="flex md:flex-row gap-5 flex-col items-center justify-evenly space-y-4 w-full lg:w-[80%] xl:w-[70%] py-4 h-full"
-            >
-                <div
-                    class="h-full flex justify-center w-[70%] sm:w-[50%] md:w-[35%] transition-transform duration-500 ease-in-out transform hover:scale-105"
-                >
-                    <img
-                        src="/ImagesWebp/celine-2.webp"
-                        alt="CEO"
-                        class="h-80 w-full border rounded-br-3xl rounded-tl-3xl"
-                    />
-                </div>
-                <div class="w-full md:w-1/2 slide-in-right">
-                    <p class="md:text-base text-sm text-center">
-                        <span class="text-lg">&quot;</span>I never actually planned on starting a
-                        business. Most times when I get an idea, I focus too much on the big picture
-                        — the finished product I imagine, that often made me stall, and many of my
-                        ideas ended up being set aside, but this time was different. When the idea
-                        for Celine’s Treats came, I realized that big things happen when you’re bold
-                        enough to start small, so here I am. I’ve always been passionate about
-                        pastries and food. In a world where so many things come and go, food remains
-                        — it brings comfort, joy, and connection. For me, pastries are more than
-                        just desserts; they’re little pieces of happiness, and through Celine’s
-                        Treats, I want to share that happiness with as many people as possible.<span
-                            class="text-xl"
-                            >&quot;</span
-                        >
-                    </p>
-                </div>
-            </div>
-        </section>
+
         <div class="col-center w-full min-h-96 primary-bg">
             <section class="min-h-96 w-full py-5 md:py-16 px-1">
                 <div class="col-center h-full md:p-5 md:py-0 px-0 py-5 space-y-8">
@@ -226,7 +180,42 @@ onMounted(() => {
                     </section>
                 </div>
             </section>
-
+            <section
+                id="About"
+                class="fade-in min-h-[300px] w-full flex flex-col items-center gap-3 p-4 secondary-bg"
+            >
+                <h1 class="text-center text-4xl md:text-5xl lg:text-6xl py-4 fade-in font-sans">
+                    About Celine's treats
+                </h1>
+                <div
+                    class="flex md:flex-row gap-5 flex-col items-center justify-evenly space-y-4 w-full lg:w-[70%] xl:w-[60%] py-4 h-full"
+                >
+                    <div
+                        class="h-full flex justify-center w-[70%] sm:w-[50%] md:w-[35%] transition-transform duration-500 ease-in-out transform hover:scale-105"
+                    >
+                        <img
+                            src="/ImagesWebp/celine-2.webp"
+                            alt="CEO"
+                            class="h-80 w-full border rounded-br-3xl rounded-tl-3xl"
+                        />
+                    </div>
+                    <div class="w-full md:w-1/2 slide-in-right">
+                        <p class="md:text-base text-sm text-center">
+                            <span class="text-lg">&quot;</span>I never actually planned on starting
+                            a business. Most times when I get an idea, I focus too much on the big
+                            picture — the finished product I imagine, that often made me stall, and
+                            many of my ideas ended up being set aside, but this time was different.
+                            When the idea for Celine’s Treats came, I realized that big things
+                            happen when you’re bold enough to start small, so here I am. I’ve always
+                            been passionate about pastries and food. In a world where so many things
+                            come and go, food remains — it brings comfort, joy, and connection. For
+                            me, pastries are more than just desserts; they’re little pieces of
+                            happiness, and through Celine’s Treats, I want to share that happiness
+                            with as many people as possible.<span class="text-xl">&quot;</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
             <section class="min-h-92 w-full center py-5 md:py-10 secondary-bg">
                 <div class="col-center w-[88%] sm:w-[90%] xl:w-[80%] h-full space-y-5 p-2">
                     <h3 class="sm:text-[2.5rem] text-2xl font-medium text-center font-sans">

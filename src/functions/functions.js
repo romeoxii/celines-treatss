@@ -70,3 +70,8 @@ export const toggleEditModal = (id) => {
     editButton.value = false;
     console.log(editButton.value);
 };
+
+export const dropDown = ref(false);
+export const openDropDown = () => {
+    dropDown.value = !dropDown.value;
+};

@@ -104,9 +104,9 @@ onMounted(async () => {
                 </div>
             </div>
         </div>
-        <div class="w-full col-center min-h-[379px]" v-else>
+        <div class="w-full col-center min-h-[379px] text-center px-4" v-else>
             <p>No orders yet — check out our store to place your first order.</p>
-            <button class="center border-b gap-1 text-neutral-700 hover hover:text-neutral-500">
+            <button class="center border-b gap-1 text-neutral-700 hover hover:text-neutral-600">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"

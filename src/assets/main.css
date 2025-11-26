@@ -18,9 +18,6 @@ button {
 .nav {
     @apply px-4 py-1 hover:text-neutral-700 hover:border-b-2 hover:border-b-[#3B82F6E6]  text-neutral-900 text-base;
 }
-.cart {
-    @apply hover:text-black/50 text-black;
-}
 
 .hover {
     transition: all 0.3s ease-in-out 0.1s;
