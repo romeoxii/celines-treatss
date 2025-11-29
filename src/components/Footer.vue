@@ -23,7 +23,7 @@
                         <h4 class="md:font-medium md:text-md">Shop</h4>
                         <a
                             class="text-[12px] font-light hover hover:text-blue-500/90"
-                            href="https://celines-treats.vercel.app/shop"
+                            href="https://celines-treatss.vercel.app/shop"
                             target="_self"
                             >All Products</a
                         >
@@ -32,7 +32,7 @@
                         <h4 class="md:font-medium md:text-md">Contact</h4>
                         <a
                             class="text-[12px] font-light hover hover:text-blue-500/90"
-                            href="https://celines-treats.vercel.app/contact"
+                            href="https://celines-treatss.vercel.app/contact"
                             target="_self"
                             >Contact us</a
                         >

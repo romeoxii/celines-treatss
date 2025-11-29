@@ -129,6 +129,7 @@ export const useAdminStore = defineStore('admin', () => {
             order.updating = true;
         }
 
+        // try block
         try {
             const { error: e } = await supabase
                 .from('orders')

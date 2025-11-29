@@ -11,7 +11,7 @@ const successMessage = ref('');
 
 async function sendEmail() {
     loading.value = true;
-    const res = await fetch('https://celines-treats.vercel.app/api/send-email', {
+    const res = await fetch('https://celines-treatss.vercel.app/api/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

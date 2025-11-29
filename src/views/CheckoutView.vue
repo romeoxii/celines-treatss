@@ -56,7 +56,7 @@ const handleCheckout = async () => {
                     email: user.value.email,
                     amount: cartStore.total * 100, // in kobo
                     reference: data.reference, // correct reference
-                    callback_url: 'https://celines-treats.vercel.app/payment-success',
+                    callback_url: 'https://celines-treatss.vercel.app/payment-success',
                 }),
             });
             console.log('res', response);
