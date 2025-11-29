@@ -133,8 +133,26 @@ onMounted(async () => {
                         </div>
                     </li>
                 </transition-group>
-                <div v-else class="center">
+                <div v-else class="col-center space-y-5">
                     <h3><i>No items in cart</i></h3>
+                    <RouterLink
+                        class="flex center w-full gap-1 p-1 text-neutral-700 hover:text-black"
+                        to="/shop"
+                        ><span
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill=""
+                                class="bi bi-arrow-left"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+                                /></svg></span
+                        ><i>Shop</i>
+                    </RouterLink>
                 </div>
                 <button
                     class="text-red-400 p-1 rounded-full text-sm bg-red-200 hover hover:bg-red-100 flex items-center justify-center"
