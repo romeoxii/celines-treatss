@@ -13,8 +13,10 @@ async function sendEmail() {
     loading.value = true;
     const res = await fetch('https://celines-treatss.vercel.app/api/send-email', {
         method: 'POST',
+        // head
         headers: {
             'Content-Type': 'application/json',
+
             Authorization: `Bearer ${import.meta.env.VITE_API_NODE_KEY}`,
         },
         body: JSON.stringify({
